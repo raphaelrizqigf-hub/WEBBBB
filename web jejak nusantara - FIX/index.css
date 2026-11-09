@@ -1,0 +1,480 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #284b3b;
+    --dark-green: #172e24;
+    --cream: #f5f1e8;
+    --gold: #c18a45;
+    --text: #282b25;
+    --muted: #77766d;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'Playfair Display', serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav ul {
+    list-style: none;
+    display:flex;
+    padding: 20px;
+    padding-right: 29px;
+    padding-top: 0px;
+    gap: 45px;
+}
+
+nav a {
+    position: relative;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: 420;
+    transition: color 0.3s;
+}
+
+.nav-links a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0px;
+    left: 0;
+    background: #053306;
+    z-index: -1;
+    transform: scaley(0);
+    transform-origin: bottom;
+    transition: transform 0.5s ease;
+}
+
+.nav-links a:hover::before {
+    transform: scaley(1);
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background: #000000;
+    transform: scalex(0);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
+
+.nav-links a:hover::after {
+    transform: scalex(1);
+}
+
+.nav-links a:hover {
+    color: #f3f3f3;
+}
+
+.logo {
+    font-size: 23px;
+    font-weight: 700;
+    color: var(--green);
+    letter-spacing: 1px;
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 25px;
+    cursor: pointer;
+    color: var(--green);
+}
+
+.hero {
+    min-height: 650px;
+    background:
+    linear-gradient(
+        90deg,
+        rgba(15, 30, 23, .88),
+        rgba(15, 30, 23, .25)
+        ),
+    url('images/hero-nusantara.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 80px 10%;
+    color: white;
+}
+
+.hero-content {
+    max-width: 700px;
+}
+
+.hero-label {
+    color: #e2b879;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(48px, 7vw, 85px);
+    line-height: 1.08;
+    margin-bottom: 25px;
+}
+
+.hero p {
+    max-width: 500px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.9;
+    color: #e5e3dc;
+    margin-bottom: 35px;
+}
+
+.hero-button {
+    display: inline-block;
+    padding: 16px 30px;
+    background: var(--gold);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    transition: .3s;
+}
+
+.hero-button:hover {
+    background: #a87335;
+    transform: translateY(-3px);
+}
+
+.section {
+    padding: 100px 10%;
+}
+
+.section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    color: var(--gold);
+    margin-bottom: 18px;
+}
+
+.section-title {
+    font-size: clamp(32px, 4vw, 48px);
+    color: var(--green);
+    margin-bottom: 20px;
+}
+
+.section-description {
+    max-width: 650px;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 2;
+    color: var(--muted);
+}
+
+.intro {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.intro-image {
+    min-height: 420px;
+    background: url('images/intro-nusantara.jpg')center / cover no-repeat;
+}
+
+.intro-text p {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    line-height: 2;
+    color: var(--muted);
+    margin-bottom: 18px;
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--green);
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 7px;
+    transition: .3s;
+}
+
+.text-link:hover {
+    color: var(--gold);
+}
+
+.featured {
+    background: #ebe5d9;
+}
+
+.featured-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 25px;
+    margin-bottom: 45px;
+}
+
+.story-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.story-card {
+    background: var(--cream);
+    transition: .3s;
+}
+
+.story-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 15px 30px #30271915;
+}
+
+.story-image {
+    height: 230px;
+    background-size: cover;
+    background-position: center;
+}
+
+.story-content {
+    padding: 25px;
+}
+
+.story-content span {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 2px;
+}
+
+.story-content h3 {
+    color: var(--green);
+    font-size: 23px;
+    margin: 15px 0;
+}
+
+.story-content p {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    line-height: 1.9;
+    color: var(--muted);
+}
+
+.timeline {
+    background: var(--dark-green);
+    color: white;
+}
+
+.timeline .section-title {
+    color: white;
+}
+
+.timeline .section-description {
+    color: #c5c9c1;
+}
+
+.timeline-list {
+    margin-top: 55px;
+    border-left: 1px solid var(--gold);
+    padding-left: 35px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 45px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -41px;
+    top: 5px;
+    width: 11px;
+    height: 11px;
+    background: var(--gold);
+    border-radius: 50%;
+}
+
+.timeline-item span {
+    color: #e2b879;
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.timeline-item h3 {
+    font-size: 25px;
+    margin: 10px 0;    
+}
+
+.timeline-item p {
+    max-width: 600px;
+    font-family: 'Inter', sans-serif;
+    color: #c5c9c1;
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.quote {
+    text-align: center;
+    padding: 110px 15%;
+}
+
+.quote h2 {
+    color: var(--green);
+    font-size: clamp(28px, 4vw, 45px);
+    line-height: 1.5;
+    font-style: italic;
+}
+
+.quote span {
+    display: block;
+    margin-top: 25px;
+    font-family: 'Inter', sans-serif;
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 3px;
+}
+
+footer {
+    background: #14271e;
+    color: white;
+    padding: 60px 10% 25px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding-bottom: 45px;
+}
+
+.footer-brand h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.footer-brand p {
+    max-width: 350px;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    line-height: 1.8;
+    color: #bfc6bd;
+}
+
+.footer-links h3 {
+    color: #e2b879;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.footer-links a {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    margin-bottom: 12px;
+    color: #c5c9c1;
+    transition: .3s;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.footer-bottom {
+    border-top: 1px solid #405247;
+    padding-top: 25px;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: #aeb7ae;
+    text-align: center;
+}
+
+@media (max-width: 800px) {
+    .section {
+    padding: 75px 7%;
+    }
+
+    .intro {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .story-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        padding: 0 6%;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        padding: 25px 7%;
+        background: var(--cream);
+        border-bottom: 1px solid #ded7c9;
+        display: none;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .hero {
+        min-height: 550px;
+        padding: 60px 7%;
+    }
+
+    .story-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .quote {
+    padding: 80px 8%;
+    }
+}
